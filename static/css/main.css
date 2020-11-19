@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar{
+    display: none;
+}
+
+:root{
+    font-family: sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    max-height: 100vh;
+}
+
+body > .navbar {
+    padding: 20px;
+    background: #FFF;
+    color: #159;
+}
+
+body > .content {
+    padding: 20px;
+}
+
+body > .footer {
+    padding: 20px;
+    background: #048;
+    color: #FFF;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+body > div.content {
+    display: grid;
+    padding: 0;
+    grid-template-columns: 2.5fr 10fr;
+    grid-template-rows: 1fr;
+}
+
+body > div.content > div.aside {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    grid-gap: 10px;
+    background: #159;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 30px;
+}
+
+body > div.content > div.aside > a.item {
+    padding: 10px;
+    background: #fff1;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+body > div.content > div.aside > a.item {
+    text-decoration: none;
+    color: #FFF;
+}
+
+
+body > div.content > div.aside > a.item:hover {
+    background: #ffff;
+    color: #159;
+    text-decoration: none;
+}
+
+body > div.content > div.aside > div.item:hover > a{
+    color: #159;
+}
+
+body > div.content > div.aside > a.item.active {
+    background: #ffff;
+    color: #159;
+}
+
+body > div.content > div.aside > div.item.active > a {
+    color: #159;
+}
+
+body > div.content > div.content {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    background: #26a;
+}
+
+.hiddenData {
+    display: none;
+}

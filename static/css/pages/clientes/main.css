@@ -1,0 +1,45 @@
+body > div.content > div.content > h1.title {
+    margin-bottom: 20px;
+}
+
+
+div.content > div.content {
+    padding: 30px;
+    color: #FFF;
+}
+
+a#addCliente {
+    display: inline-block;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background: #195;
+    color: #FFF;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a#addCliente:hover{
+    background: #084;
+}
+
+div.content > div.content > table#clientes {
+    background: #FFF;
+    color: #222;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+table#clientes > thead > tr{
+    background: #048;
+    color: #FFF;
+}
+
+table#clientes > thead > tr > th {
+    padding: 20px;
+}
+
+table#clientes > tbody > tr > td {
+    padding: 10px;
+}

@@ -1,0 +1,46 @@
+a#cancelar {
+    display: inline-block;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background: #a10;
+    color: #FFF;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a#cancelar:hover {
+    background: #b21;
+}
+
+#pessoasWrapper {
+    max-height: 40vh;
+    width: 100%;
+    margin: 30px 0;
+    margin-top: 0;
+    overflow-y: scroll;
+}
+
+#selecionado,.input {
+    padding: 20px;
+    background: #f5f5f5;
+    color: #159;
+    margin-bottom: 1px;
+}
+
+.input > input {
+    padding: 10px;
+    border: none;
+    background: #fff;
+}
+
+button#save{
+    display: inline-block;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: #195;
+    color: #FFF;
+    cursor: pointer;
+    text-decoration: none;
+}
