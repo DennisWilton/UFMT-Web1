@@ -45,7 +45,7 @@ Trata-se de um sistema de controle básico de clientes, arquitetado sob uma estr
 - [x] Estruturar o model Pessoa.php
 - [x] Criar página de listagem.
 - [x] Criar página de inserção/criação de nova pessoa.
-- [ ] Criar página de edição de pessoa existente.
+- [x] Criar página de edição de pessoa existente.
 
 ### Produto
 - [ ] Estruturar o model Produto.php
