@@ -20,3 +20,8 @@ Trata-se de um sistema de controle básico de clientes, arquitetado sob uma estr
 | PHP | Utilizado para servir páginas dinâmicas. |
 | MySQL | Banco de Dados escolhido para armazenamento dos dados |
 | JavaScript | Linguagem de interpretação contida no navegador utilizada para auxiliar a experiência de usuário em manipulação de conteúdo em tempo de execução. |
+
+## Tarefas
+
+- [ ] Teste
+- [x] Teste2
