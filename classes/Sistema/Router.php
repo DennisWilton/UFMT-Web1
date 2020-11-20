@@ -10,6 +10,11 @@ class Router
         array_shift($routes);
         array_shift($routes);
 
+        $lastRoute = $routes[count($routes) - 1];
+        $lastRouteURI = explode("?", $lastRoute)[0];
+        array_pop($routes);
+        array_push($routes, $lastRouteURI);
+        
         return $routes;
     }
 

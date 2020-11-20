@@ -16,7 +16,7 @@ class Cliente extends Pessoa{
     
     public static function getAll(){
         $conn = \Database\Database::getinstance();
-        $query = $conn->prepare("SELECT * FROM Clientes");
+        $query = $conn->prepare("SELECT ID FROM Clientes");
         $query->execute();
 
         $results = $query->fetchAll(\PDO::FETCH_OBJ);
@@ -24,17 +24,7 @@ class Cliente extends Pessoa{
         $clientes = [];
 
         foreach($results as $result){
-            $cliente = new Cliente();
-
-            $pessoa = \Model\Pessoa::get($result->PessoaID);
-
-            $cliente->PessoaID = $pessoa->ID;
-            $cliente->Nome = $pessoa->Nome;
-            $cliente->CPF = $pessoa->CPF;
-            $cliente->Sexo = $pessoa->Sexo;
-            $cliente->Codigo = $result->Codigo;
-            $cliente->ID = $result->ID;
-
+            $cliente = Cliente::load($result->ID);
             array_push($clientes, $cliente);
         }
 
@@ -84,7 +74,26 @@ class Cliente extends Pessoa{
         $cliente->Codigo = $result->Codigo;
         $cliente->PessoaID = $result->PessoaID;
         $cliente->populatePessoa();
-        
+     
         return $cliente;
+    }    
+
+    public function update(){
+        $db = \Database\Database::getInstance();
+        $res = new \stdClass();
+        $res->status = false;
+
+        try {
+            $q = $db->prepare('UPDATE Clientes SET Codigo = ? WHERE ID = ?');
+            $q->execute([$this->Codigo, $this->ID]);
+
+            $res->status = true;
+            $res->message = "Adicionado com sucesso!";
+            return $res;
+        } catch(\PDOException $e){
+            $res->message = $e.getMessages();
+            return $res;
+        }
     }
+
 }

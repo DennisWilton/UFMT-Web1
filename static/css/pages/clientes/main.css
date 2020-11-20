@@ -56,3 +56,17 @@ button#remove {
 button#remove:hover {
     background: #e12;
 }
+
+
+button#edita {
+    background: rgb(255, 144, 16);
+    padding: 10px;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button#edita:hover {
+    background: rgb(248, 177, 95);
+}

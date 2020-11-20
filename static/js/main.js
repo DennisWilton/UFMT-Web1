@@ -69,3 +69,9 @@ function mostraErro(erro, timeout = 3000){
         }, timeout)
     }
 }
+
+
+window.baseURL = window.location.href.split("/").slice(0, window.location.href.split("/").indexOf('index.php') + 1).join("/") + '/';
+window.goTo = function(path = ''){
+    window.location.href = window.baseURL + path;
+}

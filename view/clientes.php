@@ -9,6 +9,10 @@
 
     $clientes = Model\Cliente::getAll();
 
+    usort($clientes, function($a, $b){
+        return $a->Codigo - $b->Codigo;
+    });
+
     $page->setTitle(Config::GET("NOME_PROJETO"));
 ?>
 
@@ -28,8 +32,8 @@
         <table id="clientes">
             <thead>
                 <tr>
-                    <th>Nome</th>
                     <th>Código</th>
+                    <th>Nome</th>
                     <th>CPF</th>
                     <th></th>
                 <tr>
@@ -37,10 +41,13 @@
             <tbody>
                 <?php foreach($clientes as $cliente): ?>
                 <tr>
-                    <td><?= $cliente->Nome ?></td>
                     <td><?= $cliente->Codigo ?></td>
+                    <td><?= $cliente->Nome ?></td>
                     <td><?= $cliente->CPF ?></td>
-                    <td><button onclick="removeCliente(<?= $cliente->ID ?>)" id="remove">Remove</button></td>
+                    <td>
+                        <button onclick="editaCliente(<?= $cliente->ID ?>)" id="edita">Editar</button>
+                        <button onclick="removeCliente(<?= $cliente->ID ?>)" id="remove">Excluir</button>
+                    </td>
                 <tr>
                 <?php endforeach; ?>
             </tbody>
