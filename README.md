@@ -23,5 +23,44 @@ Trata-se de um sistema de controle básico de clientes, arquitetado sob uma estr
 
 ## Tarefas
 
-- [ ] Teste
-- [x] Teste2
+### Estruturação básica
+- [x] Criar arquivo-base de configurações.
+- [x] Criar estrutura básica de roteamento (Router).
+- [x] Criar conexão com o Banco de Dados.
+- [x] Criar núcleo de Models.
+- [x] Criar classe Page, responsável por instanciar páginas em suas configurações básicas (Header, Meta, CSS, JS, etc.)
+
+### Estruturação da aplicação
+- [x] Criar diretório de arquivos servidos estaticamente (CSS, JS, Imgs, etc.)
+- [?] Criar página principal. (Necessita de melhorias)
+- [x] Criação dos models: Pessoa, Cliente, Produto, etc.
+
+### Cliente
+- [x] Estruturar o model Cliente.php
+- [x] Criar página de listagem.
+- [x] Criar página de inserção/criação de novo cliente.
+- [x] Criar página de edição de cliente existente.
+
+### Pessoa
+- [x] Estruturar o model Pessoa.php
+- [x] Criar página de listagem.
+- [x] Criar página de inserção/criação de nova pessoa.
+- [ ] Criar página de edição de pessoa existente.
+
+### Produto
+- [ ] Estruturar o model Produto.php
+- [ ] Criar página de listagem.
+- [ ] Criar página de inserção/criação de novo produto.
+- [ ] Criar página de edição de produto existente.
+
+### Venda
+- [ ] Estruturar o model Venda.php
+- [ ] Criar página de listagem.
+- [ ] Criar página de inserção/criação de nova venda.
+- [ ] Criar página de edição de venda existente.
+
+### Loja
+- [ ] Estruturar o model Loja.php
+- [ ] Criar página de listagem.
+- [ ] Criar página de inserção/criação de nova loja.
+- [ ] Criar página de edição de loja existente.
