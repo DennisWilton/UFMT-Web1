@@ -3,7 +3,8 @@
     use App\Config;
 
     $page->setTitle("Página inicial");
-    $page->addCss('pages/clientes/main');
+    $page->addCss('pages/pessoas/main');
+    $page->addScript('pessoas/index');
     $page->activeMenu = 'pessoas';
 
     $pessoas = Model\Pessoa::getAll();
@@ -19,13 +20,17 @@
         <?php include("components/asideMenu.php") ?>
     </div>
     <div class="content">
+        <div id="data-pessoas" class="hiddenData">
+            <?= json_encode($pessoas) ?>
+        </div>
         <h1 class="title">Pessoas</h1>
-        <a href="<?= Config::LINK("pessoas/novo") ?>" id="addCliente">Adicionar pessoa</a>
-        <table id="clientes">
+        <a href="<?= Config::LINK("pessoas/novo") ?>" id="addPessoa">Adicionar pessoa</a>
+        <table id="pessoas">
             <thead>
                 <tr>
                     <th>Nome</th>
                     <th>CPF</th>
+                    <th></th>
                 <tr>
             </thead>
             <tbody>
@@ -33,6 +38,7 @@
                 <tr>
                     <td><?= $pessoa->Nome ?></td>
                     <td><?= $pessoa->CPF ?></td>
+                    <td><button id="editar" onclick="editaPessoa(<?= $pessoa->ID ?>)">Editar</button></td>
                 <tr>
                 <?php endforeach; ?>
             </tbody>

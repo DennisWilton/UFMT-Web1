@@ -8,7 +8,7 @@ div.content > div.content {
     color: #FFF;
 }
 
-a#addCliente {
+a#addPessoa {
     display: inline-block;
     border: none;
     padding: 10px 20px;
@@ -19,11 +19,11 @@ a#addCliente {
     text-decoration: none;
 }
 
-a#addCliente:hover{
+a#addPessoa:hover{
     background: #084;
 }
 
-div.content > div.content > table#clientes {
+div.content > div.content > table#pessoas {
     background: #FFF;
     color: #222;
     width: 100%;
@@ -31,15 +31,28 @@ div.content > div.content > table#clientes {
     border-collapse: collapse;
 }
 
-table#clientes > thead > tr{
+table#pessoas > thead > tr{
     background: #048;
     color: #FFF;
 }
 
-table#clientes > thead > tr > th {
+table#pessoas > thead > tr > th {
     padding: 20px;
 }
 
-table#clientes > tbody > tr > td {
+table#pessoas > tbody > tr > td {
     padding: 10px;
+}
+
+button#editar {
+    background: rgb(255, 144, 16);
+    padding: 10px;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button#editar:hover {
+    background: rgb(248, 177, 95);
 }

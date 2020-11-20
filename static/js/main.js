@@ -1,17 +1,14 @@
+
+//  Implementação de Denis Wilton de Paula Azevedo
+//  Fiz uma espécie de renderizador de estados inspirado no ReactJS.
 window.state = {
     selecionado: {
     }
 }
-
 window.observers = [];
-
-//  Implementação de Denis Wilton de Paula Azevedo
-//  Fiz uma espécie de renderizador de estados inspirado no ReactJS.
-
 window.listen = function(cb, affecteds){
     window.observers.push({cb, affecteds});
 }
-
 window.setState = function(param = state){
     const oldState = state;
 
@@ -53,6 +50,7 @@ window.setState = function(param = state){
     })
 
 }
+/////////////////////////////////////////////////
 
 
 function mostraErro(erro, timeout = 3000){
@@ -69,7 +67,6 @@ function mostraErro(erro, timeout = 3000){
         }, timeout)
     }
 }
-
 
 window.baseURL = window.location.href.split("/").slice(0, window.location.href.split("/").indexOf('index.php') + 1).join("/") + '/';
 window.goTo = function(path = ''){

@@ -14,29 +14,6 @@ class Pessoa extends Model{
         parent::__construct($options);        
     }
 
-    public function save(){
-        $db = \Database\Database::getInstance();
-        $res = new \stdClass();
-        $res->status = false;
-
-        try {
-            
-            if(!$this->Nome 
-            || !$this->CPF 
-            || !$this->Sexo) 
-            throw new \PDOException('Favor, preencher completamente todos os campos!');
-
-            $q = $db->prepare('INSERT INTO Pessoas (Nome, CPF, Sexo) VALUES (?, ?, ?)');
-            $q->execute([$this->Nome, $this->CPF, $this->Sexo]);
-
-            $res->status = true;
-            $res->message = "Adicionado com sucesso!";
-            return $res;
-        } catch(\PDOException $e){
-            $res->message = $e.getMessages();
-            return $res;
-        }
-    }
     
     public static function load($id){
         if(!$id) throw new Error("É necessário passar o ID!");
@@ -108,4 +85,50 @@ class Pessoa extends Model{
         return $pessoas;
     }
     
+    public function save(){
+        $db = \Database\Database::getInstance();
+        $res = new \stdClass();
+        $res->status = false;
+
+        try {
+            
+            if(!$this->Nome 
+            || !$this->CPF 
+            || !$this->Sexo) 
+            throw new \PDOException('Favor, preencher completamente todos os campos!');
+
+            $q = $db->prepare('INSERT INTO Pessoas (Nome, CPF, Sexo) VALUES (?, ?, ?)');
+            $q->execute([$this->Nome, $this->CPF, $this->Sexo]);
+
+            $res->status = true;
+            $res->message = "Adicionado com sucesso!";
+            return $res;
+        } catch(\PDOException $e){
+            $res->message = $e.getMessages();
+            return $res;
+        }
+    }
+
+    public function update(){
+        $db = \Database\Database::getInstance();
+        $res = new \stdClass();
+        $res->status = false;
+        
+        try {
+           
+            $q = $db->prepare('UPDATE Pessoas SET Nome = :nome, CPF = :cpf, Sexo = :sexo WHERE ID = :id');
+            $q->execute(['nome' => $this->Nome,
+                         'cpf' => $this->CPF,
+                         'sexo' => $this->Sexo,
+                         'id' => $this->ID
+                        ]);
+
+            $res->status = true;
+            $res->message = "Atualizado com sucesso!";
+            return $res;
+        } catch(\PDOException $e){
+            $res->message = $e.getMessages();
+            return $res;
+        }
+    }
 }
