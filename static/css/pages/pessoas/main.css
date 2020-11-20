@@ -56,3 +56,20 @@ button#editar {
 button#editar:hover {
     background: rgb(248, 177, 95);
 }
+
+button#remover {
+    background: #c01;
+    padding: 10px;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button#remover:hover {
+    background: #e12;
+}
+
+button#remover.disabled{
+    background: #ccc;
+}

@@ -38,7 +38,14 @@
                 <tr>
                     <td><?= $pessoa->Nome ?></td>
                     <td><?= $pessoa->CPF ?></td>
-                    <td><button id="editar" onclick="editaPessoa(<?= $pessoa->ID ?>)">Editar</button></td>
+                    <td>
+                        <button id="editar" onclick="editaPessoa(<?= $pessoa->ID ?>)">Editar</button>
+                        <?php if(!$pessoa->isCliente()): ?>
+                             <button id="remover" onclick="removerPessoa(<?= $pessoa->ID ?>)">Excluir</button>
+                        <?php else: ?>
+                             <button id="remover" title='Impossível excluir <?= $pessoa->Nome ?>!' class="disabled" onclick="confirm('Impossível excluir!\n\n<?= $pessoa->Nome ?> está cadastrado como cliente.\nFavor, removê-lo do cadastro de clientes, primeiro.')">Excluir</button>
+                        <?php endif; ?>
+                    </td>
                 <tr>
                 <?php endforeach; ?>
             </tbody>

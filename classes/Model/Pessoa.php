@@ -14,6 +14,15 @@ class Pessoa extends Model{
         parent::__construct($options);        
     }
 
+    public function isCliente(){
+        $conn = \Database\Database::getinstance();
+        $query = $conn->prepare("SELECT * FROM Pessoas p INNER JOIN Clientes c ON c.PessoaID = p.ID WHERE p.ID = ?");
+        $query->execute([$this->ID]);
+
+        $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+        If(count($result) > 0) return true;
+        return false;
+    }
     
     public static function load($id){
         if(!$id) throw new Error("É necessário passar o ID!");
