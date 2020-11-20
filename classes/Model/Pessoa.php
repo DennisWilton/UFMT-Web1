@@ -60,12 +60,7 @@ class Pessoa extends Model{
         $results = $query->fetchAll(\PDO::FETCH_OBJ);
         $pessoas = [];
         foreach($results as $result){
-            $pessoa = new Pessoa();
-            $pessoa->ID = $result->ID;
-            $pessoa->Nome = $result->Nome;
-            $pessoa->CPF = $result->CPF;
-            $pessoa->Sexo = $result->Sexo;
-
+            $pessoa = Pessoa::load($result->ID);
             array_push($pessoas, $pessoa);
         }
 
@@ -80,14 +75,7 @@ class Pessoa extends Model{
         $results = $query->fetchAll(\PDO::FETCH_OBJ);
         $pessoas = [];
         foreach($results as $result){
-            $pessoa = new Pessoa();
-            $pessoa->ID = $result->ID;
-            $pessoa->Nome = $result->Nome;
-            $pessoa->CPF = $result->CPF;
-            $pessoa->Sexo = $result->Sexo;
-
-            // print_r($result);
-
+            $pessoa = Pessoa::load($result->ID);
             array_push($pessoas, $pessoa);
         }
 
@@ -95,6 +83,8 @@ class Pessoa extends Model{
     }
     
     public function save(){
+        if (method_exists(get_parent_class($this), 'save')) parent::save();
+        
         $db = \Database\Database::getInstance();
         $res = new \stdClass();
         $res->status = false;
@@ -136,8 +126,28 @@ class Pessoa extends Model{
             $res->message = "Atualizado com sucesso!";
             return $res;
         } catch(\PDOException $e){
-            $res->message = $e.getMessages();
+            $res->message = $e->getMessages();
             return $res;
         }
     }
+
+    public function remove(){
+        $db = \Database\Database::getInstance();
+        $res = new \stdClass();
+        $res->status = false;
+
+        try {
+           
+            $q = $db->prepare('DELETE FROM Pessoas WHERE ID = :id');
+            $q->execute(['id' => $this->ID]);
+
+            $res->status = true;
+            $res->message = "Removido com sucesso!";
+            return $res;
+        } catch(\Throwable $e){
+            $res->message = $e;
+            return $res;
+        }
+    }
+    
 }

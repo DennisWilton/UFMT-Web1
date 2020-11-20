@@ -43,3 +43,31 @@ async function updatePessoa(pessoaID){
         mostraErro("Erro: \n > " + e, false);
     }
 }
+
+async function removerPessoa(pessoaID){
+    try{
+        let json = true;
+        
+        var fd = new FormData();
+        
+        fd.append("ID", pessoaID);
+
+        const response = await fetch(baseURL + 'api/pessoas/remove', {
+            method: "POST",
+            body: fd
+        });
+        if(json){
+            const res = await response.json();
+            console.log(res);
+            if(!res.status) throw res.message;
+        }else{
+            const res = await response.text();
+            if(!res.status) throw res;
+        }
+
+        goTo('pessoas');
+        
+    }catch(e){
+        mostraErro("Erro: \n > " + e, false);
+    }
+}

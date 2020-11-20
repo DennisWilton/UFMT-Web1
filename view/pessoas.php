@@ -8,7 +8,16 @@
     $page->activeMenu = 'pessoas';
 
     $pessoas = Model\Pessoa::getAll();
-
+    
+    function cmp($a, $b)
+    {   
+        if ($a->Nome == $b->Nome) {
+        return 0;
+        }
+        return ($a->Nome < $b->Nome) ? -1 : 1;
+    }
+    usort($pessoas, 'cmp');
+    
     $page->setTitle(Config::GET("NOME_PROJETO") . " - Lista de Pessoas");
 ?>
 
@@ -20,6 +29,7 @@
         <?php include("components/asideMenu.php") ?>
     </div>
     <div class="content">
+        <div id="erro"></div>
         <div id="data-pessoas" class="hiddenData">
             <?= json_encode($pessoas) ?>
         </div>
