@@ -32,7 +32,7 @@ Trata-se de um sistema de controle básico de clientes, arquitetado sob uma estr
 
 ### Estruturação da aplicação
 - [x] Criar diretório de arquivos servidos estaticamente (CSS, JS, Imgs, etc.)
-- [?] Criar página principal. (Necessita de melhorias)
+- [ ] Criar página principal. (Necessita de melhorias)
 - [x] Criação dos models: Pessoa, Cliente, Produto, etc.
 
 ### Cliente
