@@ -1,4 +1,8 @@
-window.state = {}
+window.state = {
+    selecionado: {
+    }
+}
+
 window.observers = [];
 
 //  Implementação de Denis Wilton de Paula Azevedo
@@ -8,7 +12,7 @@ window.listen = function(cb, affecteds){
     window.observers.push({cb, affecteds});
 }
 
-window.setState = function(param){
+window.setState = function(param = state){
     const oldState = state;
 
     if(typeof param == 'function'){
@@ -37,7 +41,7 @@ window.setState = function(param){
     document.querySelectorAll("[state]").forEach( item => {
         item.innerText = resolve(item.getAttribute('state'), state)
     })
-    
+
     observers.forEach( observer => {
         let willRerun = false;
         observer.affecteds.forEach( affected => {
@@ -48,4 +52,20 @@ window.setState = function(param){
         if(willRerun) observer.cb();
     })
 
+}
+
+
+function mostraErro(erro, timeout = 3000){
+    const erroDOM = document.querySelector("#erro");
+
+    if(!erroDOM) return;
+
+    erroDOM.style.display = 'block';
+    erroDOM.innerText = erro;
+
+    if(timeout !== false) {
+        setTimeout(() => {
+            erroDOM.style.display = 'none'
+        }, timeout)
+    }
 }

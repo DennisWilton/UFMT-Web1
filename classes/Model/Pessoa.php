@@ -14,7 +14,49 @@ class Pessoa extends Model{
         parent::__construct($options);        
     }
 
+    public function save(){
+        $db = \Database\Database::getInstance();
+        $res = new \stdClass();
+        $res->status = false;
 
+        try {
+            
+            if(!$this->Nome 
+            || !$this->CPF 
+            || !$this->Sexo) 
+            throw new \PDOException('Favor, preencher completamente todos os campos!');
+
+            $q = $db->prepare('INSERT INTO Pessoas (Nome, CPF, Sexo) VALUES (?, ?, ?)');
+            $q->execute([$this->Nome, $this->CPF, $this->Sexo]);
+
+            $res->status = true;
+            $res->message = "Adicionado com sucesso!";
+            return $res;
+        } catch(\PDOException $e){
+            $res->message = $e.getMessages();
+            return $res;
+        }
+    }
+    
+    public static function load($id){
+        if(!$id) throw new Error("É necessário passar o ID!");
+
+        $conn = \Database\Database::getinstance();
+        $query = $conn->prepare("SELECT * FROM Pessoas WHERE ID = ?");
+        $query->execute([$id]);
+
+        $result = $query->fetch(\PDO::FETCH_OBJ);
+
+        $pessoa = new Pessoa();
+        
+        $pessoa->ID = $result->ID;
+        $pessoa->Nome = $result->Nome;
+        $pessoa->CPF = $result->CPF;
+        $pessoa->Sexo = $result->Sexo;
+
+        return $pessoa;
+    }
+    
     public static function get($id){
         $conn = \Database\Database::getinstance();
         $query = $conn->prepare("SELECT * FROM Pessoas WHERE ID = ?");

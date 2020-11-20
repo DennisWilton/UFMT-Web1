@@ -99,3 +99,12 @@ body > div.content > div.content {
 .hiddenData {
     display: none;
 }
+
+
+#erro{
+    display: none;
+    color: red;
+    background: #FFF;
+    padding: 20px;
+    margin-bottom: 10px;
+}

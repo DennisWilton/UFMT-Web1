@@ -43,16 +43,3 @@ table#clientes > thead > tr > th {
 table#clientes > tbody > tr > td {
     padding: 10px;
 }
-
-button#remove {
-    background: #c01;
-    padding: 10px;
-    color: #FFF;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button#remove:hover {
-    background: #e12;
-}
