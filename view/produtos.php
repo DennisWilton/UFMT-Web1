@@ -23,6 +23,15 @@
     <div class="content">
         <h1 class="title"><?= $page->name ?></h1>
         <div id="produtos-wrapper">
+        
+        <!-- add product card -->
+        <div onclick="goTo('produtos/novo')" class="produto new">
+            <div class="picture">
+                <img  src="/ufmt/static/img/plus.png">
+            </div>
+            <span class="title">Adicionar novo</span>
+        </div>
+            
         <?php foreach($produtos as $produto): ?>
             <?php include('components/produto.php'); ?>
         <?php endforeach; ?>

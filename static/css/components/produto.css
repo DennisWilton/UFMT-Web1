@@ -18,6 +18,16 @@ div.produto:hover{
     border: 5px solid #26a;
 }
 
+div.produto.new {
+    background: #195;
+    border-color: #195;
+}
+
+div.produto.new:hover{
+    background: #2a6;
+    border-color: #2a6;
+}
+
 div.produto > .picture {
     background: #FFF;
     display: flex;
