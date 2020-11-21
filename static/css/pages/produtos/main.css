@@ -1,0 +1,70 @@
+
+body > div.content > div.content {
+    color: #222;
+    padding: 30px;
+    background: #FFF;
+}
+
+div.content > div.content > h1.title {
+    margin-bottom: 20px;
+}
+
+#produtos-wrapper {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 10px;
+    overflow: scroll;
+}
+
+div.content.ver > div.picture {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    max-height: 50vh;
+    overflow: hidden;
+}
+
+div.content.ver > div.picture > img{
+    max-width: 100%;
+    height: auto;
+}
+
+div.content.ver > div.info {
+    width: 80%;
+    margin: 0 auto;
+}
+
+div.content.ver > div.info > div {
+    /* margin: 5px 0; */
+    padding: 10px;
+    background: #159;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+}
+
+div.content.ver > div.info > div:nth-child(odd) {
+    background: #048;
+}
+
+div.content.ver > div.info > div:last-child{
+    background: #eee;
+    border: 2px solid #159;
+}
+
+div.content.ver > div.info button.excluir {
+    background: #912;
+    color: #FFF;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+div.content.ver > div.info button.excluir:hover {
+    background: #a23;
+}

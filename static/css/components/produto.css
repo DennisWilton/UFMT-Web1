@@ -1,0 +1,60 @@
+div.produto {
+    height: 100%;
+    background: #159;
+    background-position: center;
+    background-size: cover;
+    color: #FFF;
+    text-align: center;
+    border: 5px solid #159;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto auto;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+div.produto:hover{
+    background: #26a;
+    border: 5px solid #26a;
+}
+
+div.produto > .picture {
+    background: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.produto > .picture > img {
+    max-width: 100%;
+    height: auto;
+}
+
+div.produto > span.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0px;
+    margin-top: 5px;
+    font-size: 0.7em;
+    /* background: red; */
+}
+
+div.produto > div.info {
+    flex: 0.5;
+    background: #048;
+    color: #FFF;
+    margin: -5px;
+    padding: 10px;
+    display: flex;
+    margin-top: 5px;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 4px;
+}
+
+div.produto > div.info > span{
+    font-size: 0.7em;
+}
+
+
