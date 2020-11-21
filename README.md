@@ -49,7 +49,7 @@ Trata-se de um sistema de controle básico de clientes, arquitetado sob uma estr
 
 ### Produto
 - [ ] Estruturar o model Produto.php
-- [ ] Criar página de listagem.
+- [x] Criar página de listagem.
 - [ ] Criar página de inserção/criação de novo produto.
 - [ ] Criar página de edição de produto existente.
 
