@@ -25,7 +25,7 @@
         <div id="produtos-wrapper">
         
         <!-- add product card -->
-        <div onclick="goTo('produtos/novo')" class="produto new">
+        <div onclick="goTo('produtos/set')" class="produto new">
             <div class="picture">
                 <img  src="/ufmt/static/img/plus.png">
             </div>

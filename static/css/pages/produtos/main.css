@@ -23,7 +23,7 @@ div.content.ver > div.picture {
     align-items: center;
     justify-content: center;
     margin: 10px 0;
-    max-height: 50vh;
+    max-height: 42vh;
     overflow: hidden;
 }
 
@@ -43,7 +43,6 @@ div.content.ver > div.info > div {
     background: #159;
     color: #FFF;
     display: flex;
-    justify-content: center;
 }
 
 div.content.ver > div.info > div:nth-child(odd) {
@@ -55,7 +54,13 @@ div.content.ver > div.info > div:last-child{
     border: 2px solid #159;
 }
 
-div.content.ver > div.info button.excluir {
+div.content.ver > div.info input {
+    border: none;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+button.excluir {
     background: #912;
     color: #FFF;
     border: none;
@@ -64,7 +69,33 @@ div.content.ver > div.info button.excluir {
     cursor: pointer;
 }
 
-
-div.content.ver > div.info button.excluir:hover {
+button.excluir:hover {
     background: #a23;
+}
+
+button.save {
+    background: #195;
+    color: #FFF;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button.save:hover {
+    background: #2a6;
+}
+
+button.edit {
+    background: #f90;
+    color: #000;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button.edit:hover {
+    background: #e80;
+    color: #000;
 }

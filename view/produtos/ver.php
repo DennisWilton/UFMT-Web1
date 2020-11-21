@@ -31,7 +31,7 @@
             <div><span><b>Nome:</b> <?= $produto->Nome ?></span></div>
             <div><span><b>Valor:</b> R$ <?= $produto->Valor ?></span></div>
             <div><span><b>Quantidade em estoque:</b> <?= $produto->Quantidade ?></span></div>
-            <div><button class="excluir">Remover produto</button></div>
+            <div><button onclick="goTo('produtos/set?id=<?= $produto->ID?>')" class="edit">Editar</button>&nbsp;<button onclick="excluiProduto(<?= $produto->ID ?>)" class="excluir">Remover</button></div>
         </div>
     </div>
 
