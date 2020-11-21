@@ -48,10 +48,10 @@ Trata-se de um sistema de controle básico de clientes, arquitetado sob uma estr
 - [x] Criar página de edição de pessoa existente.
 
 ### Produto
-- [ ] Estruturar o model Produto.php
+- [x] Estruturar o model Produto.php
 - [x] Criar página de listagem.
-- [ ] Criar página de inserção/criação de novo produto.
-- [ ] Criar página de edição de produto existente.
+- [x] Criar página de inserção/criação de novo produto.
+- [x] Criar página de edição de produto existente.
 
 ### Venda
 - [ ] Estruturar o model Venda.php
