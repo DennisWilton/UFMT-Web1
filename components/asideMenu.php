@@ -3,6 +3,7 @@
     $menuList = [
         'home' => ['href' => 'home', 'text' => 'Página Inicial'],
         'pessoas' => ['href' => 'pessoas', 'text' => 'Pessoas'],
+        'vendedores' => ['href' => 'vendedores', 'text' => 'Vendedores'],
         'clientes' => ['href' => 'clientes', 'text' => 'Clientes'],
         'produtos' => ['href' => 'produtos', 'text' => 'Produtos'],
         'vendas' => ['href' => 'vendas', 'text' => 'Vendas'],
