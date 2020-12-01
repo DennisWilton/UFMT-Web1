@@ -6,12 +6,17 @@ class Cliente extends Pessoa{
     public $ID;
     public $Codigo;
     public $PessoaID;
+    
 
     private function populatePessoa(){
         $pessoa = Pessoa::load($this->PessoaID);
         $this->Nome = $pessoa->Nome;
         $this->CPF = $pessoa->CPF;
         $this->Sexo = $pessoa->Sexo;
+    }
+
+    private function populateEndereco(){
+        $this->enderecos = \Model\ClienteEndereco::getAll($this->ID);
     }
     
     public static function getAll(){
@@ -74,6 +79,7 @@ class Cliente extends Pessoa{
         $cliente->Codigo = $result->Codigo;
         $cliente->PessoaID = $result->PessoaID;
         $cliente->populatePessoa();
+        $cliente->populateEndereco();
      
         return $cliente;
     }    
