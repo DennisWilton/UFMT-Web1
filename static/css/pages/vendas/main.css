@@ -1,0 +1,43 @@
+
+body > div.content > div.content {
+    color: #222;
+    padding: 30px;
+    background: #FFF;
+}
+
+div.content > h1.title {
+    margin-bottom: 20px;
+}
+
+table#vendas{
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+
+table#vendas thead tr {
+    background: #048;
+    color: #FFF;
+}
+
+table#vendas thead tr th {
+    padding: 20px;
+}
+
+table#vendas tbody tr {
+    background: #eee;
+}
+
+table#vendas tbody tr:nth-child(odd) {
+    background: #ddd;
+}
+
+table#vendas tbody tr:hover{
+    background: #159;
+    color: #FFF;
+}
+
+table#vendas tr th, table#vendas tr td{
+    padding: 10px;
+}
