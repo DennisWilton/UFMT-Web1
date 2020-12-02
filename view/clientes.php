@@ -45,7 +45,7 @@
                     <td><?= $cliente->Codigo ?></td>
                     <td><?= $cliente->Nome ?></td>
                     <td><?= $cliente->CPF ?></td>
-                    <td style="font-size: 0.65em"><?= count($cliente->enderecos) > 0 ? $cliente->enderecos[0]->getEnderecoConcatenado() : 'N/A. <a href='.\App\Config::LINK("enderecos?cliente=$cliente->ID").'>Clique para cadastrar</a>' ?></td>
+                    <td style="font-size: 0.65em"><?= count($cliente->enderecos) > 0 ? $cliente->enderecos[0]->getEnderecoConcatenado() : 'N/A. <br/> <a href='.\App\Config::LINK("enderecos?cliente=$cliente->ID").'>Clique para cadastrar</a>' ?></td>
                     <td>
                         <button onclick="editaCliente(<?= $cliente->ID ?>)" id="edita">Editar</button>
                         <button onclick="removeCliente(<?= $cliente->ID ?>)" id="remove">Excluir</button>

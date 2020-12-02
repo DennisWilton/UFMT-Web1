@@ -69,7 +69,7 @@ class ClienteEndereco {
         $conn = \Database\Database::getinstance();
         $query = $conn->prepare("INSERT INTO clienteendereco VALUES (?,?,?,?,?,?,?,?)");
 
-        $query->execute([0, $this->$ClienteID, $this->$Estado, $this->$Cidade, $this->$Bairro, $this->$Logradouro, $this->$Complemento, $this->$Numero ]);
+        $query->execute([0, $this->ClienteID, $this->Estado, $this->Cidade, $this->Bairro, $this->Logradouro, $this->Complemento, $this->Numero ]);
 
     }
 

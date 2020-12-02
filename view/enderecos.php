@@ -26,7 +26,7 @@
     <div class="content">
         <div id="erro"></div>
         <h1 class="title">Endereços de <?= $cliente->Nome ?></h1>
-        <a href="<?= Config::LINK("clientes/form") ?>" id="addCliente">Adicionar endereço</a>
+        <a href="<?= Config::LINK("enderecos/add?cliente=".$cliente->ID) ?>" id="addCliente">Adicionar endereço</a>
         <table id="clientes">
             <thead>
                 <tr>
