@@ -4,8 +4,13 @@ namespace Sistema;
 class Router 
 {
     static function getRoutes(){
-        $routes = explode('/', $_SERVER['REQUEST_URI']);
 
+        $URI = $_SERVER['REQUEST_URI'];
+        if(preg_match('/^\/ufmt\/index.php/', $URI) == 0) header("Location: ".\App\Config::LINK("home"));
+
+        $routes = explode('/', $_SERVER['REQUEST_URI']);
+        
+       
         array_shift($routes);
         array_shift($routes);
         array_shift($routes);
