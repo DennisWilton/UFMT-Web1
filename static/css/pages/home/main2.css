@@ -1,0 +1,31 @@
+h1.title {
+    margin-bottom: 20px;
+}
+
+div.academicos {
+    background: #ddd;
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+div.academicos ul li {
+    list-style: none;
+}
+
+div.academicos b {
+    margin-bottom: 5px;
+    display: block;
+}
+
+div.academicos:hover{
+    background: #eee;
+    color: #222;
+}
+
+div.academicos ul li:hover {
+    font-weight: bold;
+    padding-left: 10px;
+    cursor: default;
+    color: #159;
+}
