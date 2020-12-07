@@ -29,3 +29,9 @@ div.academicos ul li:hover {
     cursor: default;
     color: #159;
 }
+
+p.github {
+    color: red;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
